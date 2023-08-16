@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url(Images/login.jpg)  ;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+}
+   
+.container{
+    width: 20vw;
+    height: 35vh;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    background-color: #fff;
+    position: absolute;
+     right: 20%;
+     top: 40%;
+}
