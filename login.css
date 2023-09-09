@@ -1,22 +1,103 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+span{
+    margin-left: 40px;
+    padding: 0;
+}
 body{
     background-image: url(Images/login.jpg)  ;
     background-repeat: no-repeat;
     background-size: 100vw;
+    background-size: 200vh;
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
    
 .container{
-    width: 20vw;
-    height: 35vh;
     border-radius: 10px;
-    display: grid;
-    justify-content: center;
-    background-color: #fff;
-    position: absolute;
-     right: 20%;
-     top: 40%;
+    background-color: white;
+    width: 560px;
+    height: 700px;
+    
+}
+
+button{
+    cursor: pointer;
+ width: 450px;
+ height: 40px;
+ margin-left: 5px;
+ background-color: black;
+ color: white;
+  border: none;
+  margin-left: 40px;
+  margin-bottom: 20px;
+   transition: all 300ms;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+.container h1{
+    font-size: 35px;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 40px;
+}
+
+.user{
+    width: 100%;
+    margin: 30px 0;
+}
+.user input{
+    width: 80%;
+    height: 40px;
+    margin-left: 40px;
+}
+
+.pass{
+    width: 100%;
+    margin: 30px 0;
+}
+
+.pass input{
+    width: 80%;
+    height: 40px;
+    margin-left: 40px;
+}
+
+.rm-ft{
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rm-ft a{
+    margin-right: 65px;
+    color: black;
+    text-decoration: none;
+}
+.rm-ft a:hover{
+    text-decoration: underline;
+}
+.c-account{
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-account a{
+    margin-right: 30px;
+    color: black;
+    text-decoration: none;
+    margin-right: 65px;
+}
+
+.c-account a:hover{
+    text-decoration: underline;
 }

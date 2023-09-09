@@ -11,14 +11,35 @@
 </head>
 <body>
    <div class="container">
-    <h1> Login</h1>
+    <h1> Seja bem vindo ao seu <br>Co working manager</h1>
     
-     <div class="user">
-        <input type="text" placeholder="Username" required>
+    <span> Digite seu e-mail</span>
+     <div class="user" id="usuario">
+        <input type="text" placeholder="Ex: joao.oliveira@gmail.com" required>
      </div>
-     <div class="pass">
-        <input type="password" placeholder="password required">
+     <span> Digite sua senha</span>
+     <div class="pass" id="senha">
+        <input type="password" placeholder="Senha">
+     </div>
+       
+     <button id="btnentrar">
+       Entrar
+     </button>
+    
+      <div class="rm-ft">
+      <label><input type="checkbox"> Lembrar-se</label>
+     
+     <a href="#">Esqueceu a senha?</a>
+   </div>
+
+     <div class="c-account">
+     <span> Não é cadastrado ainda?</span>
+      <a href="#">Registra-se</a>
      </div>
    </div>
+
+   <script src="login.js"></script>
+
+  
 </body>
 </html>
