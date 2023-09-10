@@ -1,103 +1,124 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-span{
-    margin-left: 40px;
-    padding: 0;
+label {
+    margin: 0px 40px;
+
 }
-body{
-    background-image: url(Images/login.jpg)  ;
+
+body {
+    background-image: url(Images/login.jpg);
     background-repeat: no-repeat;
     background-size: 100vw;
     background-size: 200vh;
     display: flex;
-   justify-content: center;
+    justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-   
-.container{
+
+.container {
     border-radius: 10px;
     background-color: white;
     width: 560px;
     height: 700px;
-    
+    display: flex column;
 }
 
-button{
+button {
+    background-color: #0c0d0c;
+    border: none;
+    color: white;
     cursor: pointer;
- width: 450px;
- height: 40px;
- margin-left: 5px;
- background-color: black;
- color: white;
-  border: none;
-  margin-left: 40px;
-  margin-bottom: 20px;
-   transition: all 300ms;
+    height: 40px;
+    margin: 15px 40px 20px;
+    width: 450px;
 }
 
-button:hover{
-    transform: scale(1.1);
+button:hover {
+    background-color: #1e211f;
 }
-.container h1{
+
+.container h1 {
     font-size: 35px;
     text-align: center;
     margin-top: 150px;
     margin-bottom: 40px;
 }
 
-.user{
-    width: 100%;
-    margin: 30px 0;
-}
-.user input{
-    width: 80%;
-    height: 40px;
-    margin-left: 40px;
-}
-
-.pass{
+.user {
     width: 100%;
     margin: 30px 0;
 }
 
-.pass input{
+.user input {
     width: 80%;
     height: 40px;
     margin-left: 40px;
+    margin-top: 10px;
 }
 
-.rm-ft{
+.user span {
+    margin-left: 40px;
+
+}
+
+
+.pass {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.pass input {
+    width: 80%;
+    height: 40px;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.pass span {
+    margin-left: 40px;
+}
+
+.rm-ft {
     margin-left: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
 }
 
-.rm-ft a{
+.rm-ft a {
     margin-right: 65px;
-    color: black;
+    color: #333538;
     text-decoration: none;
 }
-.rm-ft a:hover{
+
+.rm-ft a:hover {
     text-decoration: underline;
 }
+
 .c-account{
+    margin-top: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.c-account a{
+.c-account a {
+    display: flex;
     margin-right: 30px;
-    color: black;
+    color: #333538;
     text-decoration: none;
     margin-right: 65px;
 }
 
-.c-account a:hover{
+.c-account span {
+    margin-left: 40px;
+}
+
+.c-account a:hover {
     text-decoration: underline;
 }
