@@ -7,13 +7,13 @@ document.getElementById("btnentrar").addEventListener("click", function() {
         return;
     }
 
-    var usuariosValidos = [
+    var usermock = [
         { email: "teste@gmail.com", senha: "teste" },
        
     ];
 
     // Verificando se o usuário e senha correspondem a um usuário válido
-    var usuarioValido = usuariosValidos.find
+    var usuarioValido = usermock.find
     (function(usuar){
         
         return usuar.email === usuario && usuar.senha === senha;
