@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(Images/login.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.Container{
+    border-radius: 20px;
+    background-color: white;
+    width: 560px;
+    height: 700px;
+    display: flex column;
+}
+
+.Name{
+    margin: 100px 30px;
+}
+
+.Email{
+    margin: 100px 30px;
+}
+
+.Password{
+    margin: 100px 30px;
+}
+
+.Confirm{
+    margin: 100px 30px;
+}
