@@ -8,6 +8,7 @@ document.getElementById("btnentrar").addEventListener("click", function() {
     }
 
     var usermock = [
+        
         { email: "teste@gmail.com", senha: "teste" },
        
     ];

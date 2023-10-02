@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
 }
 
@@ -23,18 +24,69 @@ body{
     display: flex column;
 }
 
+.Container h1 {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
 .Name{
-    margin: 100px 30px;
+    margin: 50px 20px;
+}
+.Name input{
+    width: 174px;
+}
+.Name span{
+    margin-right: 20px;
+}
+
+.CNPJ{
+    margin: 50px 20px;
+}
+
+.CNPJ input{
+    width: 20vw;
+}
+
+.CNPJ span{
+    margin-right: 15.2px;
+}
+
+.pass{
+    margin: 50px 20px;
+}
+
+.pass input{
+    width: 20vw;
+}
+
+.pass span{
+    margin-right: 94px;
 }
 
 .Email{
-    margin: 100px 30px;
+    margin: 50px 20px;
 }
 
-.Password{
-    margin: 100px 30px;
+.Email input{
+    width: 20vw;
 }
 
-.Confirm{
-    margin: 100px 30px;
+.Email span{
+    margin-right: 93px;
+}
+
+button {
+    background-color: #0c0d0c;
+    border: none;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+    margin: 20px 40px 20px;
+    width: 450px;
+}
+
+button:hover {
+    background-color: #1e211f;
 }
