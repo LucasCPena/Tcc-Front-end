@@ -15,9 +15,12 @@ body{
     min-height: 100vh;
 }
 
+img{
+    margin-left: 200px;
+}
 
 .Container{
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: white;
     width: 560px;
     height: 700px;
@@ -27,15 +30,17 @@ body{
 .Container h1 {
     font-size: 25px;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .Name{
     margin: 50px 20px;
 }
 .Name input{
-    width: 174px;
+    width: 20vw;
+    height: 3vh;
+   
 }
 .Name span{
     margin-right: 20px;
@@ -47,6 +52,8 @@ body{
 
 .CNPJ input{
     width: 20vw;
+    height: 3vh;
+    
 }
 
 .CNPJ span{
@@ -59,6 +66,8 @@ body{
 
 .pass input{
     width: 20vw;
+    height: 3vh;
+    
 }
 
 .pass span{
@@ -71,6 +80,7 @@ body{
 
 .Email input{
     width: 20vw;
+    height: 3vh;
 }
 
 .Email span{
@@ -83,10 +93,35 @@ button {
     color: white;
     cursor: pointer;
     height: 40px;
-    margin: 20px 40px 20px;
+    margin-left: 50px;
     width: 450px;
 }
 
 button:hover {
     background-color: #1e211f;
+}
+
+.haccount{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.haccount a{
+    margin-left: 5px;
+    display: flex;
+    margin-right: 30px;
+    color: #333538;
+    text-decoration: none;
+    margin-right: 65px;
+
+}
+
+.haccount span {
+    margin-left: 40px;
+}
+
+.haccount a:hover {
+    text-decoration: underline;
 }
