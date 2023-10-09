@@ -11,6 +11,7 @@ label {
 }
 
 img{
+    margin-top: 20px;
      margin-left: 200px;
 }
 
@@ -24,7 +25,7 @@ body {
     min-height: 100vh;
 }
 
-.container {
+.Container{
     border-radius: 10px;
     background-color: white;
     width: 560px;
@@ -115,7 +116,7 @@ button:hover {
     margin-right: 30px;
     color: #333538;
     text-decoration: none;
-    margin-right: 65px;
+    
 }
 
 .c-account span {

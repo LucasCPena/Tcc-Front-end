@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
 
     <title>Main-Page</title>
 </head>
@@ -19,40 +14,41 @@
 
     <header>
         <nav>
-        <h2 class="logo">CoWorking </h2>
-               
+            <h2 class="logo">CoWorking </h2>
+
             <ul class="nav-list">
-                <li><a href="">Inicio</a></li>
+                <li><a href="Main.html">Inicio</a></li>
                 <li><a href="">Sobre</a></li>
                 <li><a href="">Reservas</a></li>
                 <li><a href="">Contato</a></li>
             </ul>
         </nav>
-        
+
     </header>
-    <main>
-      <div class="card-body">
-            <div class="image">
-            <img src="Images/2815428.png" width="150px"/ alt="">
-           </div>
-           <div class="name">
-             <span>Fulano de tal Souza</span> <br>
-             <h6> Analista de suporte</h6>
-           </div>
-           <button class="reserva">
-                <span> nova reserva</span> 
-                
-           </button>
-           <button class="mreserva">
-              <span>Minhas reservas</span>
-           </button>
-      </div>
-            <div class="dash">
-                  <h1 style="color: white;">
-                    MORRA LAURO
-                  </h1>  
-                 
+
+    <div class="content">
+        <div class="container">
+
+            <div class="info">
+                <img src="Images/2815428.png" width="150px" / alt="person">
+                <h6> Fulano de tal Souza</h6>
+                <span>Analista de Suporte</span>
             </div>
-    </main>
+            <button class="reserva">
+                <a href="booking.html">Nova Reserva</a>
+
+            </button>
+            <button class="mreserva">
+                <a href="MyBooking.html">Minhas Reservas</a>
+            </button>
+
+        </div>
+        
+    </div>
+    <div class="dash">
+
+    </div>
+
 </body>
+
 </html>
