@@ -36,7 +36,7 @@ img{
 }
 
 .Name{
-    margin: 50px 20px;
+    margin: 30px 20px;
 }
 .Name input{
     width: 20vw;
@@ -48,7 +48,7 @@ img{
 }
 
 .CNPJ{
-    margin: 50px 20px;
+    margin: 30px 20px;
 }
 
 .CNPJ input{
@@ -62,7 +62,7 @@ img{
 }
 
 .pass{
-    margin: 50px 20px;
+    margin: 30px 20px;
 }
 
 .pass input{
@@ -76,7 +76,7 @@ img{
 }
 
 .Email{
-    margin: 50px 20px;
+    margin: 30px 20px;
 }
 
 .Email input{

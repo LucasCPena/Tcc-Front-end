@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
     <title>Main-Page</title>
 </head>
 
@@ -18,37 +17,67 @@
 
             <ul class="nav-list">
                 <li><a href="Main.html">Inicio</a></li>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Reservas</a></li>
-                <li><a href="">Contato</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li class="dropdown">
+                    <a href="#">Reservas</a>
+                    <ul class="dropdown-content">
+                        <li><a href="booking.html">Minhas Reservas</a></li>
+                    </ul>
+                </li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
 
     </header>
 
-    <div class="content">
-        <div class="container">
-
-            <div class="info">
-                <img src="Images/2815428.png" width="150px" / alt="person">
-                <h6> Fulano de tal Souza</h6>
-                <span>Analista de Suporte</span>
+    <div class="container">
+        <div class="card">
+    
+          <div class="info">
+            <img src="Images/2815428.png" width="150px" / alt="person">
+            <h6> Fulano de tal Souza</h6>
+            <span>Analista de Suporte</span>
+          </div>
+          <button class="reserva">
+            <a href="">Nova Reserva</a>
+          </button>
+          <button class="mreserva">
+            <a href="booking.html">Minhas Reservas</a>
+          </button>
+    
+        </div>
+       
+        <div class="dash">
+            <h1>
+                Empresa LTDA
+             </h1>
+             <h6>
+                Endereço Coworking:
+             </h6>
+             <h6>
+                Salas contradas:
+             </h6>
+            <div class="CUser">
+                <div class="Cname">
+                    <span>Nome Completo:</span>
+                    <input type="text" placeholder=""><br>
+                </div>
+                <div class="CEmail">
+                    <span>E-mail:</span>
+                    <input type="text" placeholder="Ex:lucas@gmail.com">
+                </div>
+                <div class="CSenha">
+                    <span>Senha:</span>
+                    <input type="text" placeholder="">
+                </div>
+                <div class="Register">
+                    <button class="Rbutton">Registrar</button>
+                </div>
             </div>
-            <button class="reserva">
-                <a href="booking.html">Nova Reserva</a>
-
-            </button>
-            <button class="mreserva">
-                <a href="MyBooking.html">Minhas Reservas</a>
-            </button>
-
         </div>
         
-    </div>
-    <div class="dash">
-
-    </div>
-
+      </div>
+  
 </body>
 
 </html>

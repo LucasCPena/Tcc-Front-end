@@ -7,8 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Register.css">
 
-
     <title>Cadastro</title>
+    <script>
+   function validateForm() {
+    var cnpjRegex = /^\d{14}$/; // Expressão regular para validar CNPJ
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expressão regular para validar e-mail
+    
+
+    var nome = document.getElementById('nome').value;
+    var cnpj = document.getElementById('cnpj').value;
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('senha').value;
+
+    if (nome === "" || cnpj === "" || email === "" || senha === "") {
+        alert("Todos os campos são obrigatórios");
+        return false;
+    }
+
+    if (!cnpjRegex.test(cnpj)) {
+        alert("O CNPJ deve conter exatamente 14 dígitos");
+        return false;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("O e-mail inserido não é válido");
+        return false;
+    }
+
+    var emailsValidos = [
+        "exemplo@email.com",
+        "joao.oliveira@gmail.com",
+        "maria@empresa.com",
+        "fulano@outlook.com"
+    ];
+
+    if (!emailsValidos.includes(email)) {
+        alert("O e-mail inserido não é válido");
+        return false;
+    }
+
+    return true;
+}
+
+</script>
 </head>
 
 <body>
@@ -20,27 +61,25 @@
 
         <div class="Name" id="usuario">
             <span> Nome Completo</span>
-            <input type="text">
-            
+            <input type="text" id="nome">
         </div>
 
-        <div class="CNPJ" id="usuario">
+        <div class="CNPJ" id="empresa">
             <span> CNPJ da Empresa</span>
-            <input type="text" placeholder="EX:49395569000192">
+            <input type="text" id="cnpj" placeholder="EX:49395569000192">
         </div>
 
-       <div class="Email" id="senha">
+       <div class="Email" id="email">
             <span>E-mail</span>
-            <input type="text" placeholder="Ex: joao.oliveira@gmail.com">
+            <input type="text" id="email" placeholder="Ex: joao.oliveira@gmail.com">
         </div>
-
 
         <div class="pass" id="senha">
             <span>Senha</span>
-            <input type="password" placeholder="Senha">
+            <input type="password" id="senha" placeholder="Senha">
         </div>
         
-        <button id="btnentrar">
+        <button id="btnentrar" onclick="return validateForm()">
             Registrar
         </button>
            

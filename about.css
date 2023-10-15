@@ -158,60 +158,6 @@ li a:hover {
     margin: 20px 10px ;
 }
 
-.logo {
-    color: #fff;
-    display: inline-block;
-}
-
-nav {
-    background-color: black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 10vh;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    text-decoration: none;
-
-}
-
-.nav-list li {
-    margin-top: 15px;
-    letter-spacing: 4px;
-    padding: 15px;
-    margin-left: 30px;
-}
-
-.container {
-    display: flex;
-
-}
-
-.card {
-    border-radius: 10px;
-    display: grid;
-    margin-left: 10px;
-    background-color: white;
-    min-width: 300px;
-    min-height: 500px;
-    margin-left: 50px;
-    margin-top: 200px;
-}
-
-.dash {
-    width: 70vw;
-    height: 50vh;
-    border-radius: 15px;
-    background-color: #fff;
-    margin-right: 100px;
-    margin-top: 200px;
-    margin-left: 60px;
-    float: right;
-}
-
 
 .info {
     display: flex;
@@ -264,42 +210,84 @@ nav {
     text-decoration: none;
     margin-top: 10px;
 }
-.search-container {
-    text-align: center;
-    margin-bottom: 20px;
+
+.CUser{
+   position: static;
+   
 }
 
-.search-container button{
+.Cname{
+    display: inline-block;
+    margin-top: 20px;
+    padding-bottom: 30px;
     position: absolute;
-    right: 8%;
-    padding: 5px 10px;
-    margin-right: 20px;
+    right: 10%;
 }
 
-input[type="text"] {
-    padding: 5px;
+.CEmail{
+    margin-top: 50px;
+    padding-bottom: 10px;
     position: absolute;
-    right: 14%;
+    right: 10%;
+
 }
 
-#reservation-list{
+.CSenha{
     margin-top: 80px;
-    margin-left: 20px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 10%;
+
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-#calendar {
-    max-width: 800px;
-    margin: 0 auto;
+.Rbutton{
+    color: white;
+    background-color: #0c0d0c;
+    border-radius: 5px;
+    border: none;
+    width:165px;
+    margin-top: 110px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 10%;
 }
 
-li {
-    margin-bottom: 5px;
+.Rbutton:hover{
+    background-color: #1e211f;
 }
 
+.container{
+  margin-top: 200px;
+  padding-left: 60px !important;
+}
+
+.card-body{
+    padding: 0px !important;
+   
+}
+
+.card-text p,h6,span{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-text p{
+  padding: 5px;
+  font-size: 13px;
+}
+
+.card{
+    height: 350px !important;
+    width: 320px !important;
+}
+
+.board{
+    display: flex;
+}
 nav {
     background-color: black;
     display: flex;

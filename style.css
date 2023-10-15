@@ -137,13 +137,8 @@ body {
     background-image: url(Images/BackGround.jpg);
     background-size: 100vw 200vh;
     height: 100%
-
 }
 
-img {
-    margin-left: 70px;
-    padding: 0;
-}
 
 li a {
     color: #fff;
@@ -154,43 +149,26 @@ li a:hover {
     color: #fca311;
 }
 
+.dash h1{
+    width: 600px;
+}
+
+.dash h6{
+    width: 600px;
+    margin: 20px 10px ;
+}
+
 .logo {
     color: #fff;
     display: inline-block;
 }
 
-nav {
-    background-color: black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 10vh;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    text-decoration: none;
-
-}
-
-.nav-list li {
-    margin-top: 15px;
-    letter-spacing: 4px;
-    padding: 15px;
-    margin-left: 30px;
-}
-
-.content {
-    height: 100vh;
-
-    display: inline-block;
-    margin-top: 10%;
-    justify-content: center;
-
-}
-
 .container {
+    display: flex;
+
+}
+
+.card {
     border-radius: 10px;
     display: grid;
     margin-left: 10px;
@@ -198,22 +176,30 @@ nav {
     min-width: 300px;
     min-height: 500px;
     margin-left: 50px;
+    margin-top: 200px;
+}
 
+.dash {
+    width: 70vw;
+    height: 50vh;
+    border-radius: 15px;
+    background-color: #fff;
+    margin-right: 100px;
+    margin-top: 200px;
+    margin-left: 60px;
+    float: right;
 }
 
 
-.info{
-    display: flex column;
+.info {
+    display: flex;
+    flex-direction: column;
+    /* Correção aqui */
     justify-content: center;
     align-items: center;
-    
 }
 
-.info span{
-    margin-left: 70px;
-}
-
-.info h6{
+.info h6 {
     font-size: 15px;
     text-align: center;
 }
@@ -257,18 +243,108 @@ nav {
     margin-top: 10px;
 }
 
-.dash {
-    min-width: 70vw;
-    min-height: 50vh;
-    border-radius: 15px;
-    background-color: #fff;
-    margin-right: 100px;
-    margin-top: 200px;
-    margin-left: 20px;
-    float: right;
+.CUser{
+   position: static;
+   
+}
+
+.Cname{
+    display: inline-block;
+    margin-top: 20px;
+    padding-bottom: 30px;
+    position: absolute;
+    right: 10%;
+}
+
+.CEmail{
+    margin-top: 50px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 10%;
 
 }
 
-h1 {
+.CSenha{
+    margin-top: 80px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 10%;
+
+}
+
+.Rbutton{
     color: white;
+    background-color: #0c0d0c;
+    border-radius: 5px;
+    border: none;
+    width:165px;
+    margin-top: 110px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 10%;
+}
+
+.Rbutton:hover{
+    background-color: #1e211f;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    z-index: 1;
+      
+}
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    
+    
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+}
+
+nav .logo {
+    color: #fff;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.nav-list {
+   list-style: none;
+    display: flex;
+    text-decoration: none;
+
+}
+
+.nav-list li {
+    margin-top: 15px;
+    letter-spacing: 4px;
+    padding: 15px;
+    margin-left: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    z-index: 1;
+      
+}
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    
+    
+}
+.dropdown:hover .dropdown-content {
+    display: block;
 }
