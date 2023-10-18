@@ -1,0 +1,18 @@
+{
+  "name": "tcc-front",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/LucasCPena/Tcc-Front-end.git",
+  "author": "Lucas Cicala Pena <79058932+LucasCPena@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "open": "^9.1.0",
+    "path": "^0.12.7"
+  }
+}
