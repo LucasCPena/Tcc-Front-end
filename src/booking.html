@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main-Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+    <link rel="stylesheet" href="booking.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Main-Page</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css">
-   <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-   <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
-   <link rel="stylesheet" href="booking.css">
-</head>
+  <body>
+    <header>
+      <nav>
+        <h2 class="logo">CoWorking</h2>
 
-<body>
-
-  <header>
-    <nav>
-      <h2 class="logo">CoWorking </h2>
-
-      <ul class="nav-list">
         <ul class="nav-list">
+<<<<<<< HEAD
           <li><a href="main.html">Inicio</a></li>
           <li><a href="about.html">Sobre</a></li>
           <li class="dropdown">
               <a href="appointment.html">Reservas</a>
+=======
+          <ul class="nav-list">
+            <li><a href="main.html">Inicio</a></li>
+            <li><a href="about.html">Sobre</a></li>
+            <li class="dropdown">
+              <a href="#">Reservas</a>
+>>>>>>> 7647c8ce9dce42b494b6cbdad1e609fd5579ad93
               <ul class="dropdown-content">
-                  <li><a href="booking.html">Minhas Reservas</a></li>
+                <li><a href="booking.html">Minhas Reservas</a></li>
               </ul>
+<<<<<<< HEAD
           </li>
           <li><a href="contato.html">Contato</a></li>
       </ul>
@@ -66,14 +75,99 @@
       <div id="reservation-container" style="display: none;">
         <ul id="reservation-list">
             <!-- As reservas serão adicionadas aqui -->
+=======
+            </li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+>>>>>>> 7647c8ce9dce42b494b6cbdad1e609fd5579ad93
         </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <div class="info">
+          <img src="Images/2815428.png" width="150px" alt="person" />
+          <h6 id="userName"></h6>
+          <span id="userRole"></span>
+        </div>
+        <button class="reserva">
+          <a href="booking.html">Nova Reserva</a>
+        </button>
+        <button class="mreserva">
+          <a href="booking.html">Minhas Reservas</a>
+        </button>
       </div>
-  
-      <script src="script.js"></script>
+
+      <div class="dash">
+        <h2>Minhas Reservas</h2>
+        <span class="instrucoes"> Pesquisa suas Reservas! </span><br />
+        <span class="instrucoes">
+          Modos de Pesquisa: clicando em pesquisar voce ira puxar todas as suas
+          reservas, <br />
+        </span>
+        <span class="instrucoes">
+          selecionando uma data ira abrir o calendario e nele voce podera
+          pesquisar uma reserva especifica</span
+        >
+        <div class="search-container">
+          <input type="text" id="date" placeholder="Selecione uma data..." />
+          <button>Pesquisar</button>
+        </div>
+
+        <div id="calendar"></div>
+
+        <div id="reservation-container" style="display: none">
+          <tbody id="akeleId">
+            <tr></tr>
+          </tbody>
+        </div>
+
+        <script>
+          const token = localStorage.getItem("token");
+
+          if (!token) {
+            window.location.replace("http://localhost:5000/login");
+          }
+
+          var getRole = document.getElementById("userRole");
+          var getName = document.getElementById("userName");
+
+          const setRole = localStorage.getItem("userRole");
+          const setName = localStorage.getItem("userName");
+
+          getRole.innerText = setRole;
+          getName.innerText = setName;
+
+          const akeleId = document.getElementById("akeleId");
+          console.log(akeleId);
+          async function findAppointments() {
+            const result = await fetch(
+              "http://localhost:3000/appointment/get",
+              {
+                method: "GET",
+                headers: {
+                  Accept: "application/json, text/plain, */*",
+                  "Content-Type": "application/json",
+                  Authorization: "Bearer " + token,
+                },
+              },
+            );
+            /*
+            if (result.status !== 200) {
+              window.location.replace("http://localhost:5000/login.html");
+            }
+*/
+            const data = await result.json();
+            data.forEach((appointment) => {
+              const createDiv = document.createElement("tr");
+              akeleId.appendChild(createDiv);
+            });
+            akeleId.innerText(data);
+          }
+          findAppointments();
+        </script>
+      </div>
     </div>
-    
-  </div>
-
-</body>
-
+  </body>
 </html>
