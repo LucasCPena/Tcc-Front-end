@@ -354,3 +354,11 @@ nav .logo {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+tr{
+    background = '#dcdcdc';
+    border-radius: 5px;
+    padding:8px;
+    width: 500px;
+    height: 20px;
+}
