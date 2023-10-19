@@ -15,7 +15,7 @@ img {
 }
 
 body {
-  background-image: url(Images/login.jpg);
+  background-image: url("../Images/login.jpg");
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   display: flex;

@@ -87,7 +87,6 @@ video {
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -125,8 +124,8 @@ q:after {
 }
 
 table {
-  border-spacing: 10px;
-  border-collapse: separate;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 html {
@@ -135,9 +134,15 @@ html {
 
 body {
   background-repeat: no-repeat;
-  background-image: url(Images/BackGround.jpg);
+  background-image: url("../Images/BackGround.jpg");
   background-size: 100vw 200vh;
   height: 100%;
+}
+
+.Ctitle {
+  position: relative;
+  left: 76%;
+  top: -3%;
 }
 
 li a {
@@ -147,10 +152,6 @@ li a {
 
 li a:hover {
   color: #fca311;
-}
-
-h2 {
-  margin: 10px 20px;
 }
 
 .dash h1 {
@@ -165,27 +166,6 @@ h2 {
 .logo {
   color: #fff;
   display: inline-block;
-}
-
-nav {
-  background-color: black;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 10vh;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  text-decoration: none;
-}
-
-.nav-list li {
-  margin-top: 15px;
-  letter-spacing: 4px;
-  padding: 15px;
-  margin-left: 30px;
 }
 
 .container {
@@ -204,7 +184,7 @@ nav {
 }
 
 .dash {
-  width: 55vw;
+  width: 50vw;
   height: 50vh;
   border-radius: 15px;
   background-color: #fff;
@@ -243,7 +223,7 @@ nav {
   display: flex;
   color: white;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .mreserva {
@@ -264,48 +244,75 @@ nav {
   text-decoration: none;
   margin-top: 10px;
 }
-.search-container {
-  text-align: center;
-  margin-bottom: 20px;
+
+.CUser {
+  position: static;
 }
 
-.search-container button {
+.Cname {
+  display: inline-block;
+  padding-bottom: 30px;
   position: absolute;
-  right: 19%;
-  padding: 5px 10px;
-  margin-right: 20px;
-  margin-top: 70px;
-}
-
-input[type="text"] {
-  padding: 5px;
-  position: absolute;
-  margin-top: 70px;
   right: 25%;
 }
 
-.instrucoes {
-  margin: 10px 20px;
+.CEmail {
+  margin-top: 30px;
+  padding-bottom: 10px;
+  position: absolute;
+  right: 25%;
 }
 
-#reservation-list {
-  margin-top: 80px;
-  margin-left: 20px;
+.CEmpresa {
+  margin-top: 90px;
+  padding-bottom: 10px;
+  position: absolute;
+  right: 25%;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-#calendar {
-  max-width: 800px;
-  margin: 0 auto;
+.CCargo {
+  margin-top: 60px;
+  padding-bottom: 10px;
+  position: absolute;
+  right: 25%;
 }
 
-li {
-  margin-bottom: 5px;
+.CSenha {
+  margin-top: 120px;
+  padding-bottom: 10px;
+  position: absolute;
+  right: 25%;
 }
 
+.Rbutton {
+  color: white;
+  background-color: #0c0d0c;
+  border-radius: 5px;
+  border: none;
+  width: 165px;
+  margin-top: 150px;
+  padding-bottom: 10px;
+  position: absolute;
+  right: 25%;
+}
+
+.Rbutton:hover {
+  background-color: #1e211f;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+}
+.dropdown-content a {
+  color: white;
+  text-decoration: none;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 nav {
   background-color: black;
   display: flex;
@@ -318,15 +325,6 @@ nav .logo {
   color: #fff;
   font-size: 24px;
   display: inline-block;
-}
-
-td {
-  background: #dcdcdc;
-  border-radius: 5px;
-  padding: 8px;
-  width: 500px;
-  height: 20px;
-  
 }
 
 .nav-list {
@@ -348,12 +346,16 @@ td {
   background-color: black;
   z-index: 1;
 }
+
 .dropdown-content a {
   color: white;
   text-decoration: none;
 }
-.dropdown:hover .dropdown-content {
 
-    display: block;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
+.titulo {
+  margin: 10px 10px 20px;
+}
