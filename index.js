@@ -18,5 +18,5 @@ app.use("/", express.static("src"));
 app.use(router);
 
 app.listen(port, () => {
-  console.log(`Servidorrodando na porta ${port}`);
+  console.log(`Servidor rodando na porta ${port}`);
 });

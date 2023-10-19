@@ -30,9 +30,9 @@
     <div class="container">
       <div class="card">
         <div class="info">
-          <img src="Images/2815428.png" width="150px" / alt="person">
-          <h6>Fulano de tal Souza</h6>
-          <span>Analista de Suporte</span>
+          <img src="Images/2815428.png" width="150px" alt="person" />
+          <h6 id="userName"></h6>
+          <span id="userRole"></span>
         </div>
         <button class="reserva">
           <a href="">Nova Reserva</a>
@@ -84,6 +84,28 @@
       </div>
     </div>
     <script>
+      const token = localStorage.getItem("token");
+      if (!token) {
+        window.location.replace("http://localhost:5000/login");
+      }
+      var getRole = document.getElementById("userRole");
+      var getName = document.getElementById("userName");
+
+      async function getData() {
+        const result = await fetch("http://localhost:3000/user/get", {
+          method: "GET",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        });
+        const response = await result.json();
+        getRole.innerText = response.role;
+        getName.innerText = response.name;
+      }
+      getData();
+
       const nameElement = document.getElementById("name");
       const emailElement = document.getElementById("email");
       const passwordElement = document.getElementById("password");
