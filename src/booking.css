@@ -125,8 +125,8 @@ q:after {
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  border-spacing: 10px;
+  border-collapse: separate;
 }
 
 html {
@@ -326,6 +326,7 @@ td {
   padding: 8px;
   width: 500px;
   height: 20px;
+  
 }
 
 .nav-list {
@@ -352,18 +353,7 @@ td {
   text-decoration: none;
 }
 .dropdown:hover .dropdown-content {
-<<<<<<< HEAD
+
     display: block;
 }
 
-tr{
-    background = '#dcdcdc';
-    border-radius: 5px;
-    padding:8px;
-    width: 500px;
-    height: 20px;
-}
-=======
-  display: block;
-}
->>>>>>> 78bd9c9e267f9fad54a723e0fa0fdc603522b5b7
