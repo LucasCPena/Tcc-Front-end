@@ -35,7 +35,7 @@
           <span id="userRole"></span>
         </div>
         <button class="reserva">
-          <a href="">Nova Reserva</a>
+          <a href="appointment.html">Nova Reserva</a>
         </button>
         <button class="mreserva">
           <a href="booking.html">Minhas Reservas</a>
@@ -84,54 +84,38 @@
       </div>
     </div>
     <script>
-      const baseUrl = "localhost:5000";
-      const token = localStorage.getItem("token");
-      var pageName = document.getElementById("userName");
+       const token = localStorage.getItem("token");
 
-      var pageRole = document.getElementById("userRole");
+if (!token) {
+  window.location.replace("http://localhost:5000/login");
+}
 
-      async function start() {
-        const userInfo = await fetch(`${baseUrl}/user/get`, {
-          method: "GET",
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + token,
-          },
-        });
-        return userInfo;
-      }
+const nameElement = document.getElementById("name");
+const roleElement = document.getElementById("role");
+const emailElement = document.getElementById("email");
+const passwordElement = document.getElementById("password");
+const companyNameElement = document.getElementById("companyName");
 
-      if (!token) {
-        window.location.replace("http://localhost:5000/login");
-      }
+async function sendData() {
+  const name = nameElement.value;
+  const role = roleElement.value;
+  const email = emailElement.value;
+  const password = passwordElement.value;
+  const companyName = companyNameElement.value;
 
-      const nameElement = document.getElementById("name");
-      const roleElement = document.getElementById("role");
-      const emailElement = document.getElementById("email");
-      const passwordElement = document.getElementById("password");
-      const companyNameElement = document.getElementById("companyName");
+  const result = await fetch("http://localhost:3000/user", {
+    method: "POST",
+    body: JSON.stringify({ name, email, password, role, companyName }),
+    headers: {
+      Accept: "application/json, text/plain, */*",
+      "Content-Type": "application/json",
+    },
+  });
 
-      async function sendData() {
-        const name = nameElement.value;
-        const role = roleElement.value;
-        const email = emailElement.value;
-        const password = passwordElement.value;
-        const companyName = companyNameElement.value;
-
-        const result = await fetch(`${baseUrl}/user`, {
-          method: "POST",
-          body: JSON.stringify({ name, email, password, role, companyName }),
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-          },
-        });
-
-        if (result.status === 200) {
-          alert("Usuario criado com sucesso");
-        }
-      }
+  if (result.status === 200) {
+    alert("Usuario criado com sucesso");
+  }
+}
     </script>
   </body>
 </html>
