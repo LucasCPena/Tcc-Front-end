@@ -103,6 +103,8 @@
         const response = await result.json();
         getRole.innerText = response.role;
         getName.innerText = response.name;
+        localStorage.setItem("userName", response.name);
+        localStorage.setItem("userRole", response.role);
       }
       getData();
 

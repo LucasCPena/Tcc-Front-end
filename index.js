@@ -10,7 +10,7 @@ const login = path.join(__dirname, "src/login.html");
 
 app.use(cors());
 app.use(express.static("node_modules"));
-router.get("/login", (req, res) => res.sendFile(login));
+router.get("/", (req, res) => res.sendFile(login));
 //router.get("/main", (req, res) => res.sendFile(main));
 
 app.use("/", express.static("src"));
