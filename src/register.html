@@ -7,46 +7,6 @@
     <link rel="stylesheet" href="styles/register.css" />
 
     <title>Cadastro</title>
-    <script>
-      function validateForm() {
-        var cnpjRegex = /^\d{14}$/; // Expressão regular para validar CNPJ
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expressão regular para validar e-mail
-
-        var nome = document.getElementById("nome").value;
-        var cnpj = document.getElementById("cnpj").value;
-        var email = document.getElementById("email").value;
-        var senha = document.getElementById("senha").value;
-
-        if (nome === "" || cnpj === "" || email === "" || senha === "") {
-          alert("Todos os campos são obrigatórios");
-          return false;
-        }
-
-        if (!cnpjRegex.test(cnpj)) {
-          alert("O CNPJ deve conter exatamente 14 dígitos");
-          return false;
-        }
-
-        if (!emailRegex.test(email)) {
-          alert("O e-mail inserido não é válido");
-          return false;
-        }
-
-        var emailsValidos = [
-          "exemplo@email.com",
-          "joao.oliveira@gmail.com",
-          "maria@empresa.com",
-          "fulano@outlook.com",
-        ];
-
-        if (!emailsValidos.includes(email)) {
-          alert("O e-mail inserido não é válido");
-          return false;
-        }
-
-        return true;
-      }
-    </script>
   </head>
 
   <body>
@@ -62,36 +22,65 @@
         Cadastro do seu Co Working Manager
       </h1>
 
-      <div class="Name" id="usuario">
+      <div class="Name">
         <span> Nome Completo</span>
-        <input type="text" id="nome" />
+        <input type="text" id="name" />
       </div>
 
-      <div class="CNPJ" id="empresa">
+      <div class="CNPJ">
         <span> CNPJ da Empresa</span>
         <input type="text" id="cnpj" placeholder="EX:49395569000192" />
       </div>
 
-      <div class="Email" id="email">
-        <span>E-mail</span>
-        <input
-          type="text"
-          id="email"
-          placeholder="Ex: joao.oliveira@gmail.com"
-        />
+      <div class="rentSeats">
+        <span>Assentos alugados</span>
+        <input type="number" id="rentSeats" />
       </div>
 
-      <div class="pass" id="senha">
+      <div class="pass">
         <span>Senha</span>
-        <input type="password" id="senha" placeholder="Senha" />
+        <input type="password" id="password" placeholder="Senha" />
       </div>
 
-      <button id="btnentrar" onclick="return validateForm()">Registrar</button>
+      <button id="btnentrar" onclick="sendData()">Registrar</button>
 
       <div class="haccount">
         <span>Já possui cadastro?</span>
-        <a href="login.html">Faça o Login</a>
+        <a href="/login.html">Faça o Login</a>
       </div>
     </div>
+    <script>
+      const nameElement = document.getElementById("name");
+      const cnpjElement = document.getElementById("cnpj");
+      const rentSeatsElement = document.getElementById("rentSeats");
+      const passwordElement = document.getElementById("password");
+
+      async function sendData() {
+        const companyName = nameElement.value;
+        const cnpj = cnpjElement.value;
+        const rentSeats = rentSeatsElement.value;
+        const password = passwordElement.value;
+
+        const result = await fetch("http://localhost:3000/company", {
+          method: "POST",
+          body: JSON.stringify({ companyName, cnpj, rentSeats, password }),
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (result.status === 200) {
+          alert("Companhia criada com sucesso!");
+
+          const token = localStorage.getItem("token");
+          if (!token || token === "undefined") {
+            window.location.replace("http://localhost:5000/");
+          } else {
+            return window.location.replace("http://localhost:5000/main.html");
+          }
+        }
+      }
+    </script>
   </body>
 </html>
