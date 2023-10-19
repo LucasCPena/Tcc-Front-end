@@ -6,7 +6,7 @@ const router = express.Router();
 const port = 5000;
 
 const login = path.join(__dirname, "src/login.html");
-//const main = path.join(__dirname, "src/Main.html");
+//const main = path.join(__dirname, "src/main.html");
 
 app.use(cors());
 app.use(express.static("node_modules"));

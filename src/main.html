@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Main-Page</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h2 class="logo">CoWorking</h2>
+
+        <ul class="nav-list">
+          <li><a href="main.html">Inicio</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li class="dropdown">
+            <a href="#">Reservas</a>
+            <ul class="dropdown-content">
+              <li><a href="booking.html">Minhas Reservas</a></li>
+            </ul>
+          </li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <div class="info">
+          <img src="Images/2815428.png" width="150px" / alt="person">
+          <h6>Fulano de tal Souza</h6>
+          <span>Analista de Suporte</span>
+        </div>
+        <button class="reserva">
+          <a href="">Nova Reserva</a>
+        </button>
+        <button class="mreserva">
+          <a href="booking.html">Minhas Reservas</a>
+        </button>
+      </div>
+
+      <div class="dash">
+        <div class="titulo">
+          <h2>Soluções para Empresas</h2>
+          <p>
+            Oferecemos espaços e pacotes personalizados para atender às
+            necessidades da sua equipe. Entre em contato para saber mais.
+          </p>
+        </div>
+
+        <h1>Empresa LTDA</h1>
+        <h6>Endereço Coworking:</h6>
+        <h6>Salas contradas:</h6>
+
+        <span class="Ctitle">Cadastro de Usuario</span>
+        <div class="CUser">
+          <div class="Cname">
+            <span>Nome Completo:</span>
+            <input type="text" id="name" placeholder="" /><br />
+          </div>
+          <div class="CCargo">
+            <span>Cargo:</span>
+            <input type="text" id="role" />
+          </div>
+          <div class="CEmpresa">
+            <span>Nome da Empresa:</span>
+            <input type="text" id="companyName" />
+          </div>
+          <div class="CEmail">
+            <span>E-mail:</span>
+            <input type="text" id="email" placeholder="Ex:lucas@gmail.com" />
+          </div>
+          <div class="CSenha">
+            <span>Senha:</span>
+            <input type="text" id="password" placeholder="" />
+          </div>
+          <div class="Register">
+            <button onclick="sendData()" class="Rbutton">Registrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        window.location.replace("http://localhost:5000/login");
+      }
+
+      const nameElement = document.getElementById("name");
+      const roleElement = document.getElementById("role");
+      const emailElement = document.getElementById("email");
+      const passwordElement = document.getElementById("password");
+      const companyNameElement = document.getElementById("companyName");
+
+      async function sendData() {
+        const name = nameElement.value;
+        const role = roleElement.value;
+        const email = emailElement.value;
+        const password = passwordElement.value;
+        const companyName = companyNameElement.value;
+
+        const result = await fetch("http://localhost:3000/user", {
+          method: "POST",
+          body: JSON.stringify({ name, email, password, role, companyName }),
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (result.status === 200) {
+          alert("Usuario criado com sucesso");
+        }
+      }
+    </script>
+  </body>
+</html>
