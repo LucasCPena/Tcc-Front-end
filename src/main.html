@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html onload="start()" lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,8 +31,8 @@
       <div class="card">
         <div class="info">
           <img src="Images/2815428.png" width="150px" / alt="person">
-          <h6>Fulano de tal Souza</h6>
-          <span>Analista de Suporte</span>
+          <h6 id="userName"></h6>
+          <span id="userRole"></span>
         </div>
         <button class="reserva">
           <a href="">Nova Reserva</a>
@@ -84,7 +84,23 @@
       </div>
     </div>
     <script>
+      const baseUrl = "localhost:5000";
       const token = localStorage.getItem("token");
+      var pageName = document.getElementById("userName");
+
+      var pageRole = document.getElementById("userRole");
+
+      async function start() {
+        const userInfo = await fetch(`${baseUrl}/user/get`, {
+          method: "GET",
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        });
+        return userInfo;
+      }
 
       if (!token) {
         window.location.replace("http://localhost:5000/login");
@@ -103,7 +119,7 @@
         const password = passwordElement.value;
         const companyName = companyNameElement.value;
 
-        const result = await fetch("http://localhost:3000/user", {
+        const result = await fetch(`${baseUrl}/user`, {
           method: "POST",
           body: JSON.stringify({ name, email, password, role, companyName }),
           headers: {
