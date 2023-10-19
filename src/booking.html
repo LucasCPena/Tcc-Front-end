@@ -66,10 +66,10 @@
 
         <div id="calendar"></div>
 
-        <div id="reservation-container" style="display: none">
-          <tbody id="akeleId">
+        <div id="reservation-container">
+          <table id="appointmentId">
             <tr></tr>
-          </tbody>
+          </table>
         </div>
 
         <script>
@@ -88,8 +88,7 @@
           getRole.innerText = setRole;
           getName.innerText = setName;
 
-          const akeleId = document.getElementById("akeleId");
-          console.log(akeleId);
+          const appointmentElement = document.getElementById("appointmentId");
           async function findAppointments() {
             const result = await fetch(
               "http://localhost:3000/appointment/get",
@@ -102,17 +101,19 @@
                 },
               },
             );
-            /*
+
             if (result.status !== 200) {
-              window.location.replace("http://localhost:5000/login.html");
+              alert("erro inesperado");
             }
-*/
+
             const data = await result.json();
             data.forEach((appointment) => {
               const createDiv = document.createElement("tr");
-              akeleId.appendChild(createDiv);
+              const dataDiv = document.createElement("td");
+              dataDiv.innerText = JSON.stringify(appointment.date);
+              createDiv.appendChild(dataDiv);
+              appointmentElement.appendChild(createDiv);
             });
-            akeleId.innerText(data);
           }
           findAppointments();
         </script>
