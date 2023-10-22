@@ -87,7 +87,7 @@ video {
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
+
 article,
 aside,
 details,
@@ -382,8 +382,8 @@ td {
 }
 
 .CUser {
-  float: right; /* Faz o conteúdo se alinhar à direita */
-  max-width: 300px; /* Ajuste conforme necessário */
+  float: right; 
+  max-width: 300px; 
 }
 
 .CUser .Cname,
@@ -392,18 +392,18 @@ td {
 .CUser .CEmail,
 .CUser .CSenha,
 .CUser .Register {
-  text-align: left; /* Alinha o texto à esquerda dentro de cada div */
+  text-align: left; 
   margin-top: 5px;
 }
 .CUser .Ctitle {
   text-align: left;
-  width: 100%; /* Garante que o título ocupe toda a largura disponível */
+  width: 100%; 
 }
 
 .CUser input,
 .CUser button {
-  width: 90%; /* Faz os elementos ocuparem toda a largura do container */
-  box-sizing: border-box; /* Mantém a largura consistente ao adicionar padding e bordas */
+  width: 90%; 
+  box-sizing: border-box; 
 }
 .CUser .Rbutton {
   color: white;

@@ -127,3 +127,35 @@ button:hover {
 .c-account a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%; 
+    max-width: 100%; 
+    margin: 0 auto; 
+  }
+
+  button {
+    width: 100%; 
+    margin: 15px 0 20px; 
+  }
+
+  .email input,
+  .pass input {
+    width: calc(100% - 80px); 
+  }
+
+  .rm-ft,
+  .c-account {
+    justify-content: center; 
+  }
+
+  .rm-ft a,
+  .c-account a {
+    margin: 0 10px; 
+  }
+
+  .c-account span {
+    margin-left: 0; 
+  }
+}
