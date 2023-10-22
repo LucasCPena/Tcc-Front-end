@@ -126,3 +126,53 @@ button:hover {
 .haccount a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  img {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .Container {
+    width: 90%;
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  .Container h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .Name input,
+  .CNPJ input,
+  .pass input,
+  .rentSeats input {
+    width: 100%;
+    max-width: none;
+    height: 40px;
+    margin: 10px 0;
+  }
+
+  .Name span,
+  .CNPJ span,
+  .pass span,
+  .rentSeats span {
+    margin-right: 0;
+  }
+
+  button {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .haccount {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .haccount a {
+    margin: 5px 0;
+  }
+}
