@@ -1,123 +1,173 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main-Page</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
-    <link rel="stylesheet" href="styles/booking.css" />
-  </head>
 
-  <body>
-    <header>
-      <nav>
-        <h2 class="logo">CoWorking</h2>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Main-Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+  <link rel="stylesheet" href="styles/booking.css" />
+</head>
 
+<body>
+  <header>
+    <nav>
+      <h2 class="logo">CoWorking</h2>
+
+      <ul class="nav-list">
         <ul class="nav-list">
-          <ul class="nav-list">
-            <li><a href="main.html">Inicio</a></li>
-            <li><a href="about.html">Sobre</a></li>
-            <li class="dropdown">
-              <a href="#">Reservas</a>
-              <ul class="dropdown-content">
-                <li><a href="booking.html">Minhas Reservas</a></li>
-              </ul>
-            </li>
-            <li><a href="register.html">Cadastrar companhia</a></li>
-          </ul>
+          <li><a href="main.html">Inicio</a></li>
+          <li><a href="about.html">Sobre</a></li>
+          <li class="dropdown">
+            <a href="#">Reservas</a>
+            <ul class="dropdown-content">
+              <li><a href="booking.html">Minhas Reservas</a></li>
+            </ul>
+          </li>
+          <li><a href="register.html">Cadastrar companhia</a></li>
         </ul>
-      </nav>
-    </header>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="container">
-      <div class="card">
-        <div class="info">
-          <img src="Images/2815428.png" width="150px" alt="person" />
-          <h6 id="userName"></h6>
-          <span id="userRole"></span>
-        </div>
-        <button class="reserva">
-          <a href="appointment.html">Nova Reserva</a>
-        </button>
+  <div class="container">
+    <div class="card">
+      <div class="info">
+        <img src="Images/2815428.png" width="150px" alt="person" />
+        <h6 id="userName"></h6>
+        <span id="userRole"></span>
       </div>
-
-      <div class="dash">
-        <h2>Minhas Reservas</h2>
-        <span class="instrucoes"> Pesquisa suas Reservas! </span><br />
-        <span class="instrucoes">
-          Modos de Pesquisa: clicando em pesquisar voce ira puxar todas as suas
-          reservas, <br />
-        </span>
-        <span class="instrucoes">
-          selecionando uma data ira abrir o calendario e nele voce podera
-          pesquisar uma reserva especifica</span
-        >
-        <div class="search-container">
-          <input type="text" id="date" placeholder="Selecione uma data..." />
-          <button>Pesquisar</button>
-        </div>
-
-        <div id="calendar"></div>
-
-        <div id="reservation-container">
-          <table id="appointmentId">
-            <tr></tr>
-          </table>
-        </div>
-
-        <script>
-          const token = localStorage.getItem("token");
-
-          if (!token) {
-            window.location.replace("http://localhost:5000/login");
-          }
-
-          var getRole = document.getElementById("userRole");
-          var getName = document.getElementById("userName");
-
-          const setRole = localStorage.getItem("userRole");
-          const setName = localStorage.getItem("userName");
-
-          getRole.innerText = setRole;
-          getName.innerText = setName;
-
-          const appointmentElement = document.getElementById("appointmentId");
-          async function findAppointments() {
-            const result = await fetch(
-              "http://localhost:3000/appointment/get",
-              {
-                method: "GET",
-                headers: {
-                  Accept: "application/json, text/plain, */*",
-                  "Content-Type": "application/json",
-                  Authorization: "Bearer " + token,
-                },
-              },
-            );
-
-            if (result.status !== 200) {
-              alert("erro inesperado");
-            }
-
-            const data = await result.json();
-            data.forEach((appointment) => {
-              const createDiv = document.createElement("tr");
-              const dataDiv = document.createElement("td");
-              dataDiv.innerText = JSON.stringify(appointment.date);
-              createDiv.appendChild(dataDiv);
-              appointmentElement.appendChild(createDiv);
-            });
-          }
-          findAppointments();
-        </script>
-      </div>
+      <button class="reserva">
+        <a href="appointment.html">Nova Reserva</a>
+      </button>
     </div>
-  </body>
+
+    <div class="dash">
+      <h2>Minhas Reservas</h2>
+      <span class="instrucoes"> Pesquisa suas Reservas! </span><br />
+      <span class="instrucoes">
+        Modos de Pesquisa: clicando em pesquisar voce ira puxar todas as suas
+        reservas, <br />
+      </span>
+      <span class="instrucoes">
+        selecionando uma data ira abrir o calendario e nele voce podera
+        pesquisar uma reserva especifica</span>
+      <div class="search-container">
+        <input type="text" id="date" placeholder="Selecione uma data..." />
+        <button>Pesquisar</button>
+      </div>
+
+      <div id="calendar"></div>
+
+      <div id="reservation-container">
+        <table id="appointmentId">
+          <tr></tr>
+        </table>
+      </div>
+      <div id="pagination">
+        <button onclick="prevPage()">Anterior</button>
+        <span id="currentPage">1</span>
+        <button onclick="nextPage()">Próxima</button>
+      </div>
+      <script>
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+          window.location.replace("http://localhost:5000/login");
+        }
+
+        var getRole = document.getElementById("userRole");
+        var getName = document.getElementById("userName");
+
+        const setRole = localStorage.getItem("userRole");
+        const setName = localStorage.getItem("userName");
+
+        getRole.innerText = setRole;
+        getName.innerText = setName;
+
+        const appointmentElement = document.getElementById("appointmentId");
+        let data = [];
+
+        const itemsPerPage = 5;
+        let currentPage = 1;
+
+        function displayAppointments() {
+          appointmentElement.innerHTML = "";
+
+          const start = (currentPage - 1) * itemsPerPage;
+          const end = start + itemsPerPage;
+
+          const appointmentsToShow = data.slice(start, end);
+
+          appointmentsToShow.forEach((appointment) => {
+            const createDiv = document.createElement("tr");
+            const dataDiv = document.createElement("td");
+            dataDiv.innerText = JSON.stringify(appointment.date);
+            createDiv.appendChild(dataDiv);
+            appointmentElement.appendChild(createDiv);
+          });
+
+          document.getElementById("currentPage").textContent = currentPage;
+        }
+
+        function updatePagination() {
+          const totalPages = Math.ceil(data.length / itemsPerPage);
+          const prevButton = document.querySelector("#pagination button:first-of-type");
+          const nextButton = document.querySelector("#pagination button:last-of-type");
+
+          prevButton.disabled = currentPage === 1;
+          nextButton.disabled = currentPage === totalPages;
+
+          // Mostra ou oculta os controles de página conforme necessário
+          document.getElementById("pagination").style.display = totalPages > 1 ? "block" : "none";
+        }
+
+        function nextPage() {
+          const totalPages = Math.ceil(data.length / itemsPerPage);
+          if (currentPage < totalPages) {
+            currentPage++;
+            displayAppointments();
+            updatePagination();
+          }
+        }
+
+        function prevPage() {
+          if (currentPage > 1) {
+            currentPage--;
+            displayAppointments();
+            updatePagination();
+          }
+        }
+
+        async function findAppointments() {
+          const result = await fetch(
+            "http://localhost:3000/appointment/get",
+            {
+              method: "GET",
+              headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + token,
+              },
+            },
+          );
+
+          if (result.status !== 200) {
+            alert("erro inesperado");
+          }
+
+          data = await result.json();
+          displayAppointments();
+          updatePagination();
+        }
+        findAppointments();
+      </script>
+    </div>
+  </div>
+</body>
+
 </html>

@@ -87,6 +87,7 @@ video {
   vertical-align: baseline;
 }
 
+/* HTML5 display-role reset for older browsers */
 article,
 aside,
 details,
@@ -124,25 +125,60 @@ q:after {
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  border-spacing: 10px;
+  border-collapse: separate;
 }
 
 html {
   height: 100vh;
 }
 
+@media (max-width: 768px) {
+  body {
+    background-size: cover;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .card,
+  .dash {
+    margin: 20px 0;
+  }
+
+  .card {
+    min-width: auto;
+  }
+
+  .nav-list li {
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .card,
+  .dash {
+    margin: 0;
+  }
+
+  .nav-list li {
+    margin-top: 15px;
+    margin-left: 30px;
+  }
+}
 body {
   background-repeat: no-repeat;
   background-image: url("../Images/BackGround.jpg");
-  background-size: 100vw 200vh;
+  background-size: 100% auto;
+  background-size: cover;
+  background-position: 50% 50%;
   height: 100%;
-}
-
-.Ctitle {
-  position: relative;
-  left: 76%;
-  top: -3%;
 }
 
 li a {
@@ -152,6 +188,10 @@ li a {
 
 li a:hover {
   color: #fca311;
+}
+
+h2 {
+  margin: 10px 20px;
 }
 
 .dash h1 {
@@ -168,6 +208,27 @@ li a:hover {
   display: inline-block;
 }
 
+nav {
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+}
+
+.nav-list li {
+  margin-top: 15px;
+  letter-spacing: 4px;
+  padding: 15px;
+  margin-left: 30px;
+}
+
 .container {
   display: flex;
 }
@@ -179,12 +240,13 @@ li a:hover {
   background-color: white;
   min-width: 300px;
   min-height: 500px;
+  max-width: 100%;
   margin-left: 50px;
   margin-top: 200px;
 }
 
 .dash {
-  width: 50vw;
+  width: 100%;
   height: 50vh;
   border-radius: 15px;
   background-color: #fff;
@@ -195,9 +257,9 @@ li a:hover {
 }
 
 .info {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  /* Correção aqui */
   justify-content: center;
   align-items: center;
 }
@@ -223,7 +285,7 @@ li a:hover {
   display: flex;
   color: white;
   text-decoration: none;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .mreserva {
@@ -245,80 +307,45 @@ li a:hover {
   margin-top: 10px;
 }
 
-.CUser {
-  position: static;
-}
-
-.Cname {
-  display: inline-block;
-  padding-bottom: 30px;
-  position: absolute;
-  right: 25%;
-}
-
-.CEmail {
-  margin-top: 30px;
-  padding-bottom: 10px;
-  position: absolute;
-  right: 25%;
-}
-
-.CEmpresa {
-  margin-top: 90px;
-  padding-bottom: 10px;
-  position: absolute;
-  right: 25%;
-}
-
-.CCargo {
-  margin-top: 60px;
-  padding-bottom: 10px;
-  position: absolute;
-  right: 25%;
-}
-
-.CSenha {
-  margin-top: 120px;
-  padding-bottom: 10px;
-  position: absolute;
-  right: 25%;
-}
-
-.Rbutton {
-  color: white;
-  background-color: #0c0d0c;
-  border-radius: 5px;
-  border: none;
-  width: 165px;
-  margin-top: 150px;
-  padding-bottom: 10px;
-  position: absolute;
-  right: 25%;
-}
-
-.Rbutton:hover {
-  background-color: #1e211f;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  z-index: 1;
-}
-.dropdown-content a {
-  color: white;
-  text-decoration: none;
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-nav {
-  background-color: black;
+.search-container {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 10vh;
+  justify-content: flex-end; 
+  align-items: center; 
+  margin-bottom: 20px; 
+  margin-top: 20px; 
+}
+
+.search-container input[type="text"] {
+  padding: 5px;
+  width: 100%; 
+  max-width: 300px; 
+}
+
+.search-container button {
+  padding: 5px 10px;
+  margin-right: 20px;
+}
+.instrucoes {
+  margin: 10px 20px;
+}
+
+#reservation-list {
+  margin-top: 80px;
+  margin-left: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#calendar {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+li {
+  margin-bottom: 5px;
 }
 
 nav .logo {
@@ -327,17 +354,12 @@ nav .logo {
   display: inline-block;
 }
 
-.nav-list {
-  list-style: none;
-  display: flex;
-  text-decoration: none;
-}
-
-.nav-list li {
-  margin-top: 15px;
-  letter-spacing: 4px;
-  padding: 15px;
-  margin-left: 30px;
+td {
+  background: #dcdcdc;
+  border-radius: 5px;
+  padding: 8px;
+  width: 500px;
+  height: 20px;
 }
 
 .dropdown-content {
@@ -355,7 +377,41 @@ nav .logo {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.CUser {
+  position: static;
+}
 
-.titulo {
-  margin: 10px 10px 20px;
+.CUser {
+  float: right; /* Faz o conteúdo se alinhar à direita */
+  max-width: 300px; /* Ajuste conforme necessário */
+}
+
+.CUser .Cname,
+.CUser .CCargo,
+.CUser .CEmpresa,
+.CUser .CEmail,
+.CUser .CSenha,
+.CUser .Register {
+  text-align: left; /* Alinha o texto à esquerda dentro de cada div */
+  margin-top: 5px;
+}
+.CUser .Ctitle {
+  text-align: left;
+  width: 100%; /* Garante que o título ocupe toda a largura disponível */
+}
+
+.CUser input,
+.CUser button {
+  width: 90%; /* Faz os elementos ocuparem toda a largura do container */
+  box-sizing: border-box; /* Mantém a largura consistente ao adicionar padding e bordas */
+}
+.CUser .Rbutton {
+  color: white;
+  background-color: #0c0d0c;
+  border-radius: 5px;
+  border: none;
+  width: 165px;
+  padding-bottom: 10px;
+  position: absolute;
+  margin-top: 10px;
 }
