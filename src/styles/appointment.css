@@ -299,6 +299,10 @@ nav {
   border-radius: 10px;
 }
 
+.mreserva:hover{
+  background-color: #1e211f;
+}
+
 .mreserva a {
   margin-left: 5px;
   display: flex;

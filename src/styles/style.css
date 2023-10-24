@@ -236,7 +236,6 @@ nav {
 .card {
   border-radius: 10px;
   display: grid;
-  margin-left: 10px;
   background-color: white;
   min-width: 300px;
   min-height: 500px;
@@ -279,7 +278,9 @@ nav {
   border-radius: 10px;
   background-color: black;
 }
-
+.reserva:hover{
+  background-color: #1e211f;
+}
 .reserva a {
   margin-left: 5px;
   display: flex;
@@ -298,7 +299,9 @@ nav {
   height: 50px;
   border-radius: 10px;
 }
-
+.mreserva:hover{
+  background-color: #1e211f;
+}
 .mreserva a {
   margin-left: 5px;
   display: flex;
@@ -414,4 +417,9 @@ td {
   padding-bottom: 10px;
   position: absolute;
   margin-top: 10px;
+  cursor: pointer;
+}
+
+.CUser .Rbutton:hover{
+  background-color: #1e211f;
 }

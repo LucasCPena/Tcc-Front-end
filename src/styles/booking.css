@@ -280,6 +280,10 @@ nav {
   background-color: black;
 }
 
+.reserva:hover{
+  background-color: #1e211f;
+}
+
 .reserva a {
   margin-left: 5px;
   display: flex;
@@ -378,3 +382,16 @@ td {
   display: block;
 }
 
+#pagination button {
+  background-color: #0c0d0c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  margin: 15px 40px 20px;
+  width: 100px;
+} 
+
+#pagination button:hover {
+  background-color: #1e211f;
+}
